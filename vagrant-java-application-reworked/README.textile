@@ -15,18 +15,6 @@ the configuration can be found in databags/apps/java_app.json
 
 It defines the server name and alias, the war and container context as well as the database to use.
 
-h2. Chef-Solo Tweaks
-
-Databags and Chef-Search are ment to be used with chef client. The application cookbook makes heavy use of this
-chef features. To be able to use it in a vagrant/chef-solo environment some tweaks are necessary.
-
-To tell Vagrant about the databags we have have to add this monkeypatch: "Vagrant_monkeypatch.rb":https://gist.github.com/867958
-Chef solo still does not know how to read the databags from file and how to search and save without a server. This is done with
-cookbooks/vagrant/libraries/chef_solo_databag_patch.rb which is extended from "chef_solo_patch.rb":https://gist.github.com/867960
-
-save does nothing at the moment. It "works" for demonstration/development purposes.
-search is rather dumb at the moment.
-
 h2. Run it
 
 Download the archive or to a git clone. Ensure that you have a proper Vagrant environment installed.
