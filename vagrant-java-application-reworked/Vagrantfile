@@ -29,7 +29,7 @@ Vagrant::Config.run do |config|
         :mysql => {
             :bind_address => "127.0.0.1"
         },
-        "build-essential" => {
+        "build_essential" => {
           "compiletime" => true
         }
 
