@@ -62,7 +62,7 @@
   },
   "path": "/probe",
   "privileged": "true",
-  "domain_name": "java_app.smackaho.st",
-  "domain_name_aliases": "alias_java_app.smackaho.st"
+  "domain_name": "java-app.42foo.com",
+  "domain_name_aliases": "alias-java-app.42foo.com"
 
 }
