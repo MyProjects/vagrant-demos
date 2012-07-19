@@ -5,7 +5,8 @@
   "default_attributes": {
   },
   "description": "",
-  "run_list": [
+  "run_list": [ 
+    "recipe[build-essential]",
     "recipe[application]"
   ],
   "override_attributes": {
