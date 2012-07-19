@@ -1,4 +1,4 @@
-<VirtualHost *:80 <%= "*:#{node[:vagrant][:config][:vm][:forwarded_ports][:web][:hostport]}" if node[:vagrant] %>>
+<VirtualHost *:80 *:4567>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml application/javascript text/css
 
   #allow reverse proxy
