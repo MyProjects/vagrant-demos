@@ -34,6 +34,34 @@ if Chef::Config[:solo]
   end
 
   require_relative 'parser.rb'
+  
+  class Chef
+    class Node
+
+      def save
+        Chef::Log.warn("call from #{caller_array.join(":")} to save on solo run, doing nothing")
+      end
+
+      private
+
+      def caller_array
+        parse_caller(caller(2).first)
+      end
+
+      def caller_method_name
+        caller_array.last
+      end
+
+      def parse_caller(at)
+          if /^(.+?):(\d+)(?::in `(.*)')?/ =~ at
+              file = Regexp.last_match[1]
+          line = Regexp.last_match[2].to_i
+          method = Regexp.last_match[3]
+          [file, line, method]
+        end
+      end
+    end
+  end
 
   class Chef
     module Mixin
