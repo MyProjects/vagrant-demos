@@ -1,5 +1,3 @@
-#require '../lib/vagrant_solo_databag_patch'
-
 Vagrant::Config.run do |config|
   # All Vagrant configuration is done here. For a detailed explanation
   # and listing of configuration options, please view the documentation
